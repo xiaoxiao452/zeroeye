@@ -8,7 +8,7 @@ on:
 permissions:
   actions: write
   contents: read
-  pull-requests: read
+  pull-requests: write
 
 jobs:
   automatic-approve:
@@ -18,5 +18,5 @@ jobs:
       - name: Automatic Approve
         uses: mheap/automatic-approve-action@v1
         with:
-          token: ${{ secrets.AUTOMATIC_APPROVE_PAT }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           workflows: "Diagnostic build log"
